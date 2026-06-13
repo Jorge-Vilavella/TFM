@@ -1,0 +1,24 @@
+﻿# GitHub Linguist: mostrar el proyecto como BI/Data Science, no como automatizacion PowerShell.
+
+# Scripts auxiliares de instalacion/ejecucion: no cuentan como lenguaje principal.
+*.ps1 linguist-vendored
+
+# Archivos internos de Power BI Project: forman parte del informe, pero no deben dominar el grafico de lenguajes.
+*.tmdl linguist-vendored
+*.pbip linguist-vendored
+*.pbir linguist-vendored
+*.pbism linguist-vendored
+*.platform linguist-vendored
+powerbi/**/*.json linguist-vendored
+powerbi/**/*.abf linguist-vendored
+
+# Resultados generados por notebooks/modelos.
+outputs/** linguist-generated
+*.csv linguist-generated
+*.png linguist-generated
+*.html linguist-generated
+
+# Mantener como lenguajes detectables principales.
+*.py linguist-detectable=true
+*.sql linguist-detectable=true
+*.ipynb linguist-detectable=true
