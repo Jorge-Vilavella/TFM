@@ -1,0 +1,109 @@
+table predicciones_ventas
+	lineageTag: c851002b-32a9-4063-925a-04dd984f4730
+
+	column id_prediccion
+		dataType: int64
+		lineageTag: a6d6089b-8d1e-4058-bcbf-b3897b987cae
+		summarizeBy: sum
+		sourceColumn: id_prediccion
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3d60d5d8-78fd-47b2-b2e5-1d9584e6d31a
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal
+		dataType: string
+		lineageTag: 164191e2-c222-44b8-89d4-4f03f5e49a0a
+		summarizeBy: none
+		sourceColumn: canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: 0df86269-9cbe-460c-b874-83d77398e90b
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column modelo
+		dataType: string
+		lineageTag: 503d14e8-f615-4f30-bdd1-e118d309fce8
+		summarizeBy: none
+		sourceColumn: modelo
+
+		annotation SummarizationSetBy = Automatic
+
+	column real_unidades
+		dataType: double
+		lineageTag: 07bba6c6-98cd-46c6-88ce-327f1327891a
+		summarizeBy: sum
+		sourceColumn: real_unidades
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prediccion_unidades
+		dataType: double
+		lineageTag: bc9a16eb-1923-42fb-af08-7c5afefc1c82
+		summarizeBy: sum
+		sourceColumn: prediccion_unidades
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column error_unidades
+		dataType: double
+		lineageTag: d44f1afd-6844-432f-88e4-5e3841391759
+		summarizeBy: sum
+		sourceColumn: error_unidades
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column error_abs_unidades
+		dataType: double
+		lineageTag: 3a27394b-588a-4729-adf0-e16bdf29997b
+		summarizeBy: sum
+		sourceColumn: error_abs_unidades
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fecha_ejecucion
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9d8b9154-8aa6-4f93-bc38-fbcbd3c497e0
+		summarizeBy: none
+		sourceColumn: fecha_ejecucion
+
+		variation Variación
+			isDefault
+			relationship: 07d6071a-fb54-493e-821f-450eec98e67e
+			defaultHierarchy: LocalDateTable_2d1ae952-88e1-40ce-b76a-2fcc80f419da.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition predicciones_ventas_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="predicciones_ventas"]}[Data]
+				in
+				    Datos
+

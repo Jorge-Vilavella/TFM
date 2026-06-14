@@ -1,0 +1,61 @@
+table dim_canal
+	lineageTag: a2f488d2-b54f-40f7-9799-1ccb1f7cd0e5
+
+	column channel_id
+		dataType: int64
+		lineageTag: 377dbf22-db97-4144-a11f-17eb6b2f67f1
+		summarizeBy: none
+		sourceColumn: channel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_name
+		dataType: string
+		lineageTag: 87d5be4f-d2ef-472d-a78f-4ef961caa87e
+		summarizeBy: none
+		sourceColumn: channel_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_type
+		dataType: string
+		lineageTag: 2c8fdfd8-faa0-457c-ae5b-299884eb3d0c
+		summarizeBy: none
+		sourceColumn: channel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column default_commission_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: e2e39112-58c2-4901-afdb-001de13baa5e
+		summarizeBy: none
+		sourceColumn: default_commission_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column fulfillment_type
+		dataType: string
+		lineageTag: dd64d97d-3ba4-41e8-8a88-f68dd8b66281
+		summarizeBy: none
+		sourceColumn: fulfillment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_scope
+		dataType: string
+		lineageTag: 3ed346f3-e4fa-4a3a-bf22-91ba3220cae2
+		summarizeBy: none
+		sourceColumn: country_scope
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_canal_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="dim_canal_powerbi"]}[Data]
+				in
+				    Datos
+

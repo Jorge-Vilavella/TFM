@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "detalleStock",
+  "position": {
+    "x": 24,
+    "y": 425,
+    "z": 7000,
+    "height": 235,
+    "width": 1216,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "producto"
+                }
+              },
+              "queryRef": "riesgo_stock.producto",
+              "nativeQueryRef": "producto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "categoria"
+                }
+              },
+              "queryRef": "riesgo_stock.categoria",
+              "nativeQueryRef": "categoria"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "almacen"
+                }
+              },
+              "queryRef": "riesgo_stock.almacen",
+              "nativeQueryRef": "almacen"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "stock_disponible"
+                }
+              },
+              "queryRef": "riesgo_stock.stock_disponible",
+              "nativeQueryRef": "stock_disponible"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "punto_reposicion"
+                }
+              },
+              "queryRef": "riesgo_stock.punto_reposicion",
+              "nativeQueryRef": "punto_reposicion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "dias_cobertura_stock"
+                }
+              },
+              "queryRef": "riesgo_stock.dias_cobertura_stock",
+              "nativeQueryRef": "dias_cobertura_stock"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "riesgo_stock"
+                    }
+                  },
+                  "Property": "nivel_riesgo_stock"
+                }
+              },
+              "queryRef": "riesgo_stock.nivel_riesgo_stock",
+              "nativeQueryRef": "nivel_riesgo_stock"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle de riesgo de stock'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [],
+      "border": []
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

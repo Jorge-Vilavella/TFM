@@ -1,0 +1,69 @@
+table resumen_ejecutivo
+	lineageTag: 441218f4-66d3-4a9a-969d-910c6749c3af
+
+	column pedidos
+		dataType: int64
+		lineageTag: 0e3dc384-99ea-4622-8e16-95372e2bbfdd
+		sourceColumn: pedidos
+
+	column lineas_venta
+		dataType: int64
+		lineageTag: e6312170-d214-4789-85db-5311910c3404
+		sourceColumn: lineas_venta
+
+	column unidades_vendidas
+		dataType: int64
+		lineageTag: 30fd023d-c038-4867-855e-5407782148f2
+		sourceColumn: unidades_vendidas
+
+	column ventas_netas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 4dfeb0dd-1e68-4570-aaa3-cbb341ce24b9
+		summarizeBy: sum
+		sourceColumn: ventas_netas
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_totales
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 6d967791-a957-4e09-b164-bb6cda6e03d3
+		summarizeBy: sum
+		sourceColumn: costes_totales
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 435587e2-8ccc-47fd-aea2-d86c2bbf23c6
+		summarizeBy: sum
+		sourceColumn: margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 13851b06-c6e5-45af-9a9e-bd17385eafab
+		summarizeBy: sum
+		sourceColumn: margen_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column lineas_margen_negativo
+		dataType: int64
+		formatString: #,0.00
+		lineageTag: 6f4f6619-fe82-4e7c-929e-f6d6d98bfaf5
+		sourceColumn: lineas_margen_negativo
+
+	partition resumen_ejecutivo_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="resumen_ejecutivo"]}[Data]
+				in
+				    Datos
+

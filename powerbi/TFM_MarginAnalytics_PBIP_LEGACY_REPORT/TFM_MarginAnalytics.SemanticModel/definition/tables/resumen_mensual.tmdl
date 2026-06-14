@@ -1,0 +1,99 @@
+table resumen_mensual
+	lineageTag: 37f87f16-7751-4ef1-b4e4-458bf211e644
+
+	column anio
+		dataType: int64
+		lineageTag: 1a65fe22-3164-4a33-8347-56f12c594f66
+		sourceColumn: anio
+
+	column mes_numero
+		dataType: int64
+		lineageTag: f6fcc82f-88c8-400a-8c3c-babc1b24b22c
+		sourceColumn: mes_numero
+
+	column mes_nombre
+		dataType: string
+		lineageTag: eebab2c4-dbc5-4b04-b92b-d291bf513a44
+		sourceColumn: mes_nombre
+
+	column canal
+		dataType: string
+		lineageTag: a122c337-cb96-4963-b324-a219b25bc642
+		sourceColumn: canal
+
+	column tipo_canal
+		dataType: string
+		lineageTag: 865cc597-0f9f-4757-8675-df8174665146
+		sourceColumn: tipo_canal
+
+	column categoria
+		dataType: string
+		lineageTag: 02d11a3b-5b5e-4f93-adc3-3a61ff8aa986
+		sourceColumn: categoria
+
+	column lineas_venta
+		dataType: int64
+		lineageTag: dc31958c-6b85-4c3a-ac61-b5a0be79d124
+		sourceColumn: lineas_venta
+
+	column pedidos
+		dataType: int64
+		lineageTag: ae5c9565-4cb4-42a2-abf9-26904add3092
+		sourceColumn: pedidos
+
+	column unidades_vendidas
+		dataType: int64
+		lineageTag: 5ff85b79-6ea6-4a94-a4d7-1f7a3a990c43
+		sourceColumn: unidades_vendidas
+
+	column ventas_netas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 0d144401-ae13-448c-8ad9-d972edc7cec8
+		summarizeBy: sum
+		sourceColumn: ventas_netas
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_totales
+		dataType: double
+		formatString: #,0.00
+		lineageTag: bc383822-9780-48e5-ba83-5e99d475aaea
+		summarizeBy: sum
+		sourceColumn: costes_totales
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8c07cf21-d895-45ff-84b5-f75f2603ac00
+		summarizeBy: sum
+		sourceColumn: margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: e03ae77d-9133-46b1-adb6-e4f6a709c2f8
+		summarizeBy: sum
+		sourceColumn: margen_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column lineas_margen_negativo
+		dataType: int64
+		formatString: #,0.00
+		lineageTag: 0a2e7480-e50f-45c8-9324-68bb74a77d6b
+		sourceColumn: lineas_margen_negativo
+
+	partition resumen_mensual_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="resumen_mensual"]}[Data]
+				in
+				    Datos
+

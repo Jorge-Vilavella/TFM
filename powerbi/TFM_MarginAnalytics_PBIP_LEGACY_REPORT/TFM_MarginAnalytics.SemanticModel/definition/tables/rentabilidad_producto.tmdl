@@ -1,0 +1,109 @@
+table rentabilidad_producto
+	lineageTag: 09b4c8c8-488d-46fa-ae37-b2deef397b40
+
+	column id_producto
+		dataType: int64
+		lineageTag: a0522137-1b02-44b5-852d-d4db6ad81de5
+		sourceColumn: id_producto
+
+	column codigo_producto
+		dataType: string
+		lineageTag: 44b6fa95-8d7d-4305-995e-455be2501baa
+		sourceColumn: codigo_producto
+
+	column sku
+		dataType: string
+		lineageTag: 5ea5f67d-54e7-47d5-9bcd-c40d244c44ec
+		sourceColumn: sku
+
+	column producto
+		dataType: string
+		lineageTag: 428e38f1-33bd-4fac-b0da-a9edb40ac9fa
+		sourceColumn: producto
+
+	column categoria
+		dataType: string
+		lineageTag: 26b9162a-2a0e-4906-a72b-6c7878e006fd
+		sourceColumn: categoria
+
+	column subcategoria
+		dataType: string
+		lineageTag: 805c39a6-e692-425a-b7f8-4caeddbc4b53
+		sourceColumn: subcategoria
+
+	column marca
+		dataType: string
+		lineageTag: 66bed028-7085-4b99-ab9a-4035a9aeec52
+		sourceColumn: marca
+
+	column proveedor
+		dataType: string
+		lineageTag: e118bee4-eb18-4e08-8098-5fdb59e231ba
+		sourceColumn: proveedor
+
+	column lineas_venta
+		dataType: int64
+		lineageTag: 5d111e11-1407-468a-b4a1-00dcfb67dc7f
+		sourceColumn: lineas_venta
+
+	column pedidos
+		dataType: int64
+		lineageTag: 0548653c-35a2-4485-b4af-aba2281f8b9c
+		sourceColumn: pedidos
+
+	column unidades_vendidas
+		dataType: int64
+		lineageTag: c7c12928-3cfd-4edb-9b39-693061a9071d
+		sourceColumn: unidades_vendidas
+
+	column ventas_netas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 30b86278-4632-4e19-839e-a18e0ea23314
+		summarizeBy: sum
+		sourceColumn: ventas_netas
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_totales
+		dataType: double
+		formatString: #,0.00
+		lineageTag: a840718c-152d-49f4-8e3c-1c03b3e90d20
+		summarizeBy: sum
+		sourceColumn: costes_totales
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8581c303-0a59-4ae9-9045-9adbe0efdcda
+		summarizeBy: sum
+		sourceColumn: margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 942ad1a7-155c-4087-9706-7a3ba6a13c50
+		summarizeBy: sum
+		sourceColumn: margen_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column ranking_margen
+		dataType: int64
+		formatString: #,0.00
+		lineageTag: 8e840da2-1521-4a7d-9ce0-085f98dd07c1
+		sourceColumn: ranking_margen
+
+	partition rentabilidad_producto_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="rentabilidad_producto"]}[Data]
+				in
+				    Datos
+

@@ -1,0 +1,2 @@
+comparacion,n_direct,n_marketplace,mediana_direct,mediana_marketplace,estadistico,pvalor,interpretacion
+Direct vs Marketplace,18750,56250,0.4139,0.2633,816434191.0,0.0,Diferencia estadisticamente significativa

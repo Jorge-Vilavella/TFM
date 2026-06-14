@@ -1,0 +1,19 @@
+variable,coeficiente
+Intercept,0.7067972165232903
+C(canal)[T.Miravia],0.08478763396070826
+C(canal)[T.Shein],-0.045247177295388075
+C(canal)[T.Web Propia],0.2867790953480993
+C(categoria)[T.Belleza],0.004467812616175242
+C(categoria)[T.Calzado],0.001750739788645466
+C(categoria)[T.Deporte],0.0003559585593672738
+C(categoria)[T.Electronica],0.0017486552431658733
+C(categoria)[T.Hogar],0.0018478526467710166
+C(categoria)[T.Infantil],0.0018091203202134634
+C(categoria)[T.Moda Hombre],0.00019724661293161897
+C(categoria)[T.Moda Mujer],0.0011224639022886355
+C(categoria)[T.Outlet],0.0025730299767576796
+descuento_pct_real,-0.0023584580378122498
+peso_comision_sobre_venta,0.7461052933786849
+peso_envio_sobre_venta,-1.1943352391933746
+peso_coste_producto_sobre_venta,-0.9915599600996781
+unidades_vendidas,-0.0014199167493597273

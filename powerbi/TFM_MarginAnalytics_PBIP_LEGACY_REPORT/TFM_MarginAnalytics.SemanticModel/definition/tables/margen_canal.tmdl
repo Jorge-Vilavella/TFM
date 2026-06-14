@@ -1,0 +1,101 @@
+table margen_canal
+	lineageTag: 1cffff51-286f-4201-acbe-84780dc1811c
+
+	column canal
+		dataType: string
+		lineageTag: 61deb611-95c8-4d00-b14a-59165fe78d10
+		sourceColumn: canal
+
+	column tipo_canal
+		dataType: string
+		lineageTag: 26928196-7693-4bd8-9b7b-a9d929e435ce
+		sourceColumn: tipo_canal
+
+	column pedidos
+		dataType: int64
+		lineageTag: a63e54b0-8930-4ebc-8f62-5fcc7f9a27d8
+		sourceColumn: pedidos
+
+	column unidades_vendidas
+		dataType: int64
+		lineageTag: d4223b29-2da2-495a-a57a-c3fb030e7b2f
+		sourceColumn: unidades_vendidas
+
+	column ventas_netas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c6e0f350-b85e-4839-a65d-4c9c0d4e59ec
+		summarizeBy: sum
+		sourceColumn: ventas_netas
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_totales
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 46ab46d7-1f87-4bcf-8543-2c46a5352e35
+		summarizeBy: sum
+		sourceColumn: costes_totales
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2f54cea6-2eb1-4915-8b83-944c85c7df0d
+		summarizeBy: sum
+		sourceColumn: margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 3aa83d10-790a-4467-8e10-97cc4c846d4a
+		summarizeBy: sum
+		sourceColumn: margen_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column comisiones
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 870d3708-0ae4-4c53-a806-4ed10206f922
+		summarizeBy: sum
+		sourceColumn: comisiones
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_pago
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 6e481f77-0025-4d01-bb1b-cbd13c93d2aa
+		summarizeBy: sum
+		sourceColumn: costes_pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_envio
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 518e7479-c14c-4668-8c98-37e744712605
+		summarizeBy: sum
+		sourceColumn: costes_envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column lineas_margen_negativo
+		dataType: int64
+		formatString: #,0.00
+		lineageTag: 3d092be7-1587-4863-b6bb-3be4ea7a814e
+		sourceColumn: lineas_margen_negativo
+
+	partition margen_canal_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="margen_canal"]}[Data]
+				in
+				    Datos
+

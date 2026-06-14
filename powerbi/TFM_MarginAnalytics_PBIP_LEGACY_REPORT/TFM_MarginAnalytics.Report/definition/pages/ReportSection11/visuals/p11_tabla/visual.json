@@ -1,0 +1,210 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "p11_tabla",
+  "position": {
+    "x": 24,
+    "y": 430,
+    "z": 6000,
+    "height": 230,
+    "width": 1216,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "categoria"
+                }
+              },
+              "queryRef": "ventas_powerbi.categoria",
+              "nativeQueryRef": "categoria",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "subcategoria"
+                }
+              },
+              "queryRef": "ventas_powerbi.subcategoria",
+              "nativeQueryRef": "subcategoria",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "marca"
+                }
+              },
+              "queryRef": "ventas_powerbi.marca",
+              "nativeQueryRef": "marca",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "producto"
+                }
+              },
+              "queryRef": "ventas_powerbi.producto",
+              "nativeQueryRef": "producto",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "ventas_netas"
+                }
+              },
+              "queryRef": "ventas_powerbi.ventas_netas",
+              "nativeQueryRef": "ventas_netas",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "unidades_vendidas"
+                }
+              },
+              "queryRef": "ventas_powerbi.unidades_vendidas",
+              "nativeQueryRef": "unidades_vendidas",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "costes_totales"
+                }
+              },
+              "queryRef": "ventas_powerbi.costes_totales",
+              "nativeQueryRef": "costes_totales",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "margen"
+                }
+              },
+              "queryRef": "ventas_powerbi.margen",
+              "nativeQueryRef": "margen",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ventas_powerbi"
+                    }
+                  },
+                  "Property": "margen_pct"
+                }
+              },
+              "queryRef": "ventas_powerbi.margen_pct",
+              "nativeQueryRef": "margen_pct",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

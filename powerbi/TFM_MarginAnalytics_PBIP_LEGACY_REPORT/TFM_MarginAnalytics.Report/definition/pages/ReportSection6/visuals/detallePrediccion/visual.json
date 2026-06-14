@@ -1,0 +1,197 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "detallePrediccion",
+  "position": {
+    "x": 650,
+    "y": 455,
+    "z": 6000,
+    "height": 205,
+    "width": 590,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "canal"
+                }
+              },
+              "queryRef": "predicciones_ventas.canal",
+              "nativeQueryRef": "canal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "categoria"
+                }
+              },
+              "queryRef": "predicciones_ventas.categoria",
+              "nativeQueryRef": "categoria"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "fecha"
+                }
+              },
+              "queryRef": "predicciones_ventas.fecha",
+              "nativeQueryRef": "fecha"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "real_unidades"
+                }
+              },
+              "queryRef": "predicciones_ventas.real_unidades",
+              "nativeQueryRef": "real_unidades"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "prediccion_unidades"
+                }
+              },
+              "queryRef": "predicciones_ventas.prediccion_unidades",
+              "nativeQueryRef": "prediccion_unidades"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "predicciones_ventas"
+                    }
+                  },
+                  "Property": "error_abs_unidades"
+                }
+              },
+              "queryRef": "predicciones_ventas.error_abs_unidades",
+              "nativeQueryRef": "error_abs_unidades"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle de predicciones'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [],
+      "border": []
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

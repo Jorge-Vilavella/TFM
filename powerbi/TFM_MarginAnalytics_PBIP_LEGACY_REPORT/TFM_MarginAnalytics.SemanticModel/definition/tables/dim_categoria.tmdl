@@ -1,0 +1,20 @@
+table dim_categoria
+	lineageTag: 549a1731-4ac9-488a-b38f-2bbc3d99d18d
+
+	column categoria
+		dataType: string
+		lineageTag: 3a442f6a-e5ae-4f56-8586-e1ea0c61895d
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_categoria_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="dim_categoria_powerbi"]}[Data]
+				in
+				    Datos
+

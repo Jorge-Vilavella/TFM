@@ -1,0 +1,7 @@
+dataset,filas,columnas,duplicados,nulos_totales,columnas_con_nulos
+ventas,75000,67,0,120000,2
+resumen_mensual,960,14,0,0,0
+rentabilidad_producto,500,16,0,0,0
+margen_canal,4,12,0,0,0
+riesgo_stock,1000,20,0,278,1
+prediccion_base,26469,14,0,120,3

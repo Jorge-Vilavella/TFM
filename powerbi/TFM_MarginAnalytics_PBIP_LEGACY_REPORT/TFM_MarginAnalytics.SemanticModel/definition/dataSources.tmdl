@@ -1,0 +1,18 @@
+dataSource 'SQL/.\SQL_ESTUDIO;TFM_MarginAnalytics'
+	connectionDetails =
+			{
+			  "authentication": null,
+			  "query": null
+			}
+		protocol: tds
+		address
+			server: .\SQL_ESTUDIO
+			database: TFM_MarginAnalytics
+	credential =
+			{
+			  "kind": "SQL",
+			  "path": ".\\SQL_ESTUDIO;TFM_MarginAnalytics"
+			}
+		authenticationKind: Windows
+		username: ccaus\xaviserentill
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "TFM_MarginAnalytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c873c558-be67-475a-bff1-803044cb09a7"
+  }
+}

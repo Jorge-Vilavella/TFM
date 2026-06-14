@@ -1,0 +1,22 @@
+{
+  "sql_server": "(localdb)\\MSSQLLocalDB",
+  "database": "TFM_MarginAnalytics",
+  "driver": "ODBC Driver 17 for SQL Server",
+  "schema_bronze": "bronze",
+  "schema_silver": "silver",
+  "schema_gold": "gold",
+  "main_views": {
+    "ventas_powerbi": "gold.ventas_powerbi",
+    "prediccion_base": "silver.prediccion_base_ventas",
+    "predicciones": "gold.predicciones_ventas",
+    "stock": "gold.riesgo_stock",
+    "calidad": "gold.calidad_datos"
+  },
+  "outputs": {
+    "datos": "outputs/datos",
+    "graficos": "outputs/graficos",
+    "informes_calidad": "outputs/informes_calidad",
+    "modelos": "outputs/modelos",
+    "powerbi": "outputs/powerbi"
+  }
+}

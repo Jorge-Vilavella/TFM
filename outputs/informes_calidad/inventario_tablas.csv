@@ -1,0 +1,15 @@
+esquema,tabla,filas
+dbo,dim_almacen,2
+dbo,dim_canal,4
+dbo,dim_categoria,16
+dbo,dim_cliente,3000
+dbo,dim_envio,4
+dbo,dim_fecha,731
+dbo,dim_marca,20
+dbo,dim_metodo_pago,4
+dbo,dim_producto,500
+dbo,dim_promocion,11
+dbo,dim_proveedor,12
+dbo,fact_inventario,105000
+dbo,fact_ventas,75000
+gold,fact_prediccion_ventas,28848

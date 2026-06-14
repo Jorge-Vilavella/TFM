@@ -1,0 +1,65 @@
+relationship fa517e28-0945-410f-b438-c82d98c70ce0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ventas_powerbi.fecha
+	toColumn: dim_fecha.full_date
+
+relationship 6c2f98e1-c116-47c6-9513-5ff787928b71
+	joinOnDateBehavior: datePartOnly
+	fromColumn: predicciones_ventas.fecha
+	toColumn: dim_fecha.full_date
+
+relationship 97441863-5ae4-4525-aa3a-059a694c725e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: riesgo_stock.fecha_stock
+	toColumn: dim_fecha.full_date
+
+relationship 624afdc8-8d1f-4a47-9cfc-4cf9f1a84ded
+	fromColumn: ventas_powerbi.canal
+	toColumn: dim_canal.channel_name
+
+relationship 001e2a15-eb98-4e22-ac25-b7f649c6d236
+	fromColumn: predicciones_ventas.canal
+	toColumn: dim_canal.channel_name
+
+relationship ff150083-9400-4134-8824-bb6c63b903f4
+	fromColumn: margen_canal.canal
+	toColumn: dim_canal.channel_name
+
+relationship 84ea4ae9-d910-4de1-bc10-e2c55529f32d
+	fromColumn: resumen_mensual.canal
+	toColumn: dim_canal.channel_name
+
+relationship 90cdda86-7c1b-48a6-903f-a11812e7abde
+	fromColumn: predicciones_ventas.categoria
+	toColumn: dim_categoria.categoria
+
+relationship 2d3fec5f-333b-490c-9114-36cd5f29529d
+	fromColumn: resumen_mensual.categoria
+	toColumn: dim_categoria.categoria
+
+relationship fc953f18-7643-4230-835f-bf044557be12
+	fromColumn: ventas_powerbi.id_producto
+	toColumn: dim_producto.product_id
+
+relationship d030963a-065b-42f2-9d24-09e984784f09
+	fromColumn: rentabilidad_producto.id_producto
+	toColumn: dim_producto.product_id
+
+relationship 725dcb72-beb9-4a03-bab1-da075e97c11b
+	fromColumn: riesgo_stock.id_producto
+	toColumn: dim_producto.product_id
+
+relationship 16ea1f98-4133-4cd9-9271-df0736f5fb0e
+	fromColumn: dim_producto.categoria
+	toColumn: dim_categoria.categoria
+
+relationship 07d6071a-fb54-493e-821f-450eec98e67e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: predicciones_ventas.fecha_ejecucion
+	toColumn: LocalDateTable_2d1ae952-88e1-40ce-b76a-2fcc80f419da.Date
+
+relationship 0501202e-ff2e-40c6-89e4-aa33abe783fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_fecha.full_date
+	toColumn: LocalDateTable_c5b46e1a-df39-4f73-83a4-bfed683d2ae3.Date
+

@@ -1,0 +1,108 @@
+table dim_fecha
+	lineageTag: cad44559-9727-42ca-8625-9c505c976bbf
+
+	column date_id
+		dataType: int64
+		lineageTag: 284e3ae6-085d-4f5c-9b85-d2bf2ecd7459
+		summarizeBy: sum
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2fa5391a-4922-4789-af2b-e2fed3f18fa5
+		summarizeBy: none
+		sourceColumn: full_date
+
+		variation Variación
+			isDefault
+			relationship: 0501202e-ff2e-40c6-89e4-aa33abe783fc
+			defaultHierarchy: LocalDateTable_c5b46e1a-df39-4f73-83a4-bfed683d2ae3.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day
+		dataType: int64
+		lineageTag: 446c4aec-d814-4bfb-b1d0-ef1527c01911
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		lineageTag: cb9a20c9-2705-4892-a5c1-7f665c948257
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: 5593d158-e916-41b9-81a6-ab1616cceb24
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		lineageTag: c62874da-e4a2-4961-9b62-145102653eff
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		lineageTag: 39448c8e-d998-48de-82c1-894533d95415
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_of_year
+		dataType: int64
+		lineageTag: a5407c1c-881e-4e18-ba13-7798e247710c
+		summarizeBy: sum
+		sourceColumn: week_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: int64
+		lineageTag: 05571de4-6664-4306-b4f5-685b6230ca0a
+		summarizeBy: sum
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		lineageTag: 4bfb1dd3-4d9e-40ac-8818-d0e3fa4ac23a
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: 41be8967-4a48-4d3d-b33a-8986ff13bed0
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fecha_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="dim_fecha_powerbi"]}[Data]
+				in
+				    Datos
+

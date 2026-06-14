@@ -1,0 +1,188 @@
+table Medidas
+	lineageTag: a1724bbb-62a3-4ce6-9cd0-08a6858b66bc
+
+	measure 'Ventas netas' = SUM('ventas_powerbi'[ventas_netas])
+		formatString: #,0.00
+		displayFolder: 01 KPIs
+		lineageTag: 6fe30009-2e1f-489c-af53-53e918a31279
+
+	measure 'Costes totales' = SUM('ventas_powerbi'[costes_totales])
+		formatString: #,0.00
+		displayFolder: 01 KPIs
+		lineageTag: e60acf17-3e60-4bf3-9ed0-a0f59a7a945e
+
+	measure Margen = SUM('ventas_powerbi'[margen])
+		formatString: #,0.00
+		displayFolder: 01 KPIs
+		lineageTag: a0e87776-638b-4b04-9bf8-ecb52dc5f935
+
+	measure 'Margen %' = DIVIDE([Margen], [Ventas netas])
+		formatString: 0.00%
+		displayFolder: 01 KPIs
+		lineageTag: 06ca11bd-066d-4046-a4f0-9eca766d5e4a
+
+	measure 'Unidades vendidas' = SUM('ventas_powerbi'[unidades_vendidas])
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: c348c515-775e-4fdb-a112-efa8796d1a01
+
+	measure Pedidos = DISTINCTCOUNT('ventas_powerbi'[id_pedido])
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: 39082853-4fb9-4171-94c9-0b3c539bf0cf
+
+	measure 'Lineas venta' = COUNTROWS('ventas_powerbi')
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: 2a8488a4-5291-4e61-baaa-265601df74a2
+
+	measure 'Lineas margen negativo' = SUM('ventas_powerbi'[flag_margen_negativo])
+		formatString: #,0
+		displayFolder: 02 Calidad
+		lineageTag: f64f2b9e-197e-4ee0-9647-c1b45d79835e
+
+	measure 'Margen Direct' = CALCULATE([Margen], 'ventas_powerbi'[tipo_canal] = "Direct")
+		formatString: #,0.00
+		displayFolder: 03 Canal
+		lineageTag: 2d635737-3af5-49f4-a05e-e2eb1b832d04
+
+	measure 'Margen Marketplace' = CALCULATE([Margen], 'ventas_powerbi'[tipo_canal] = "Marketplace")
+		formatString: #,0.00
+		displayFolder: 03 Canal
+		lineageTag: 5e1af22a-af6c-4f5f-9894-67f17420b72d
+
+	measure 'Error medio prediccion' = AVERAGE('predicciones_ventas'[error_abs_unidades])
+		formatString: #,0.00
+		displayFolder: 04 Prediccion
+		lineageTag: 4b863bc8-dab0-4bc4-9157-3f9075fa452f
+
+	measure 'Margen producto' = SUM('rentabilidad_producto'[margen])
+		formatString: #,0.00
+		displayFolder: 05 Producto
+		lineageTag: c1ca8229-f0f8-4d4f-9e63-b083f955b25e
+
+	measure 'Ventas producto' = SUM('rentabilidad_producto'[ventas_netas])
+		formatString: #,0.00
+		displayFolder: 05 Producto
+		lineageTag: 73e42b93-a765-4ccb-a5fa-72057f989e3d
+
+	measure 'Registros stock' = COUNTROWS('riesgo_stock')
+		formatString: #,0
+		displayFolder: 06 Stock
+		lineageTag: d1a6a733-f839-492c-a3bd-e58de522b922
+
+	measure 'Stock disponible' = SUM('riesgo_stock'[stock_disponible])
+		formatString: #,0
+		displayFolder: 06 Stock
+		lineageTag: 140cb816-9cec-41c3-8bfb-43ae9f142fec
+
+	measure 'Stock riesgo alto' = SUM('riesgo_stock'[flag_riesgo_alto])
+		formatString: #,0
+		displayFolder: 06 Stock
+		lineageTag: 776c9b54-6b7c-4285-b957-814d04067b09
+
+	measure 'Real unidades' = SUM('predicciones_ventas'[real_unidades])
+		formatString: #,0
+		displayFolder: 04 Prediccion
+		lineageTag: 175aa095-415a-4726-91b1-48623daea58e
+
+	measure 'Prediccion unidades' = SUM('predicciones_ventas'[prediccion_unidades])
+		formatString: #,0
+		displayFolder: 04 Prediccion
+		lineageTag: 6136b994-8382-4241-95a9-97caca2f290c
+
+	measure 'Calidad resultado' = SUM('calidad_datos'[resultado])
+		formatString: #,0
+		displayFolder: 02 Calidad
+		lineageTag: 2a6c6646-31cc-4ab5-b64b-a2454235d9b3
+
+	measure 'Coste producto' = SUM('ventas_powerbi'[coste_producto])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: 583ac5e5-439d-4075-83c3-a72d4d9dd7b5
+
+	measure Comision = SUM('ventas_powerbi'[comision])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: e8f6c819-cfab-495b-8b48-16c23738880c
+
+	measure 'Coste pago' = SUM('ventas_powerbi'[coste_pago])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: 565a7794-302e-494d-9c99-32fdc3ae3d90
+
+	measure 'Coste envio' = SUM('ventas_powerbi'[coste_envio_asignado])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: a4968e47-da62-45cf-ab7f-356833e532f8
+
+	measure 'Importe descuento' = SUM('ventas_powerbi'[importe_descuento])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: e2382d6c-f3c2-4c7d-a89c-0e2d410d2ec5
+
+	measure 'Importe bruto' = SUM('ventas_powerbi'[importe_bruto])
+		formatString: #,0.00
+		displayFolder: 04 Costes
+		lineageTag: 420cb883-99f6-418d-b6a7-dec2eb7a5737
+
+	measure 'Descuento %' = DIVIDE([Importe descuento], [Importe bruto])
+		formatString: 0.00%
+		displayFolder: 04 Costes
+		lineageTag: c12f84b4-3166-436a-95f4-ae2dcd4d7524
+
+	measure 'Ticket medio' = DIVIDE([Ventas netas], [Pedidos])
+		formatString: #,0.00
+		displayFolder: 01 KPIs
+		lineageTag: e6569d35-6701-4ca0-90d7-15d623370981
+
+	measure 'Unidades por pedido' = DIVIDE([Unidades vendidas], [Pedidos])
+		formatString: #,0.00
+		displayFolder: 01 KPIs
+		lineageTag: c3f92aa7-124c-4102-bda6-6812c4222260
+
+	measure 'Margen negativo %' = DIVIDE([Lineas margen negativo], [Lineas venta])
+		formatString: 0.00%
+		displayFolder: 02 Calidad
+		lineageTag: 928df4d0-0af3-42ff-81f0-731423a9a659
+
+	measure Productos = DISTINCTCOUNT('ventas_powerbi'[id_producto])
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: 07bc72a2-9de5-4407-a7ff-79908aa649e0
+
+	measure Clientes = DISTINCTCOUNT('ventas_powerbi'[id_cliente])
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: 998b6331-cf3c-4fef-b8e0-9a6408bdc778
+
+	measure 'Stock reservado' = SUM('riesgo_stock'[stock_reservado])
+		formatString: #,0
+		displayFolder: 06 Stock
+		lineageTag: 114613f2-aab7-476e-ae77-c1aafadb2131
+
+	measure 'Unidades entrantes' = SUM('riesgo_stock'[unidades_entrantes])
+		formatString: #,0
+		displayFolder: 06 Stock
+		lineageTag: 22daca04-785d-4f2e-8916-adbb26d7544e
+
+	measure 'Dias cobertura media' = AVERAGE('riesgo_stock'[dias_cobertura_stock])
+		formatString: #,0.00
+		displayFolder: 06 Stock
+		lineageTag: 6df7702f-4f89-45d1-a7f5-b505db7b8cea
+
+	measure 'Sesgo prediccion' = AVERAGE('predicciones_ventas'[error_unidades])
+		formatString: #,0.00
+		displayFolder: 04 Prediccion
+		lineageTag: d528e133-7070-4f5f-b507-10c3295288da
+
+	column Dummy
+		dataType: string
+		isHidden
+		lineageTag: dbfff708-c03b-436f-95c9-5d623b0f7d64
+		sourceColumn: Dummy
+
+	partition Medidas_Partition = m
+		mode: import
+		source = let Source = #table({"Dummy"}, {{""}}) in Source
+

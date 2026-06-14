@@ -1,0 +1,569 @@
+table ventas_powerbi
+	lineageTag: 7bf943e3-0560-40db-b539-52412ad26245
+
+	column id_linea_venta
+		dataType: int64
+		lineageTag: 72755778-3389-4e5b-ab5c-5de4ce46cd79
+		summarizeBy: sum
+		sourceColumn: id_linea_venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_pedido
+		dataType: string
+		lineageTag: 257f1648-5a70-4b43-9110-5aaec1bed91b
+		summarizeBy: none
+		sourceColumn: id_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5e61a00c-2466-4c36-9a07-ea702dc28896
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		lineageTag: fd96822b-4a5f-4eea-9788-81dbe4b14e50
+		summarizeBy: sum
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_numero
+		dataType: int64
+		lineageTag: a1567fb0-12ec-41bd-96c4-0b8949ce6361
+		summarizeBy: sum
+		sourceColumn: mes_numero
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes_nombre
+		dataType: string
+		lineageTag: 67f3ae88-6ce0-491f-a8d1-2ec5fbcc630b
+		summarizeBy: none
+		sourceColumn: mes_nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		lineageTag: 7f7c21dc-99fa-44d6-81bc-7bb5b499473d
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column semana_anio
+		dataType: int64
+		lineageTag: 500f9583-59e3-42ba-82ad-bd1611e17762
+		summarizeBy: sum
+		sourceColumn: semana_anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		dataType: int64
+		lineageTag: 1add2929-67b4-45ab-839e-46e6393d102c
+		summarizeBy: sum
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_nombre
+		dataType: string
+		lineageTag: 674efd5b-e2d6-495e-9bde-9b56765b19f8
+		summarizeBy: none
+		sourceColumn: dia_nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_fin_de_semana
+		dataType: boolean
+		lineageTag: 08b3e642-0de2-4856-bccf-0a30e4a8fd04
+		summarizeBy: none
+		sourceColumn: es_fin_de_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_producto
+		dataType: int64
+		lineageTag: d523c448-671b-4b0c-8610-7345894b87c3
+		summarizeBy: sum
+		sourceColumn: id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_producto
+		dataType: string
+		lineageTag: cdaf002c-bc62-4607-92b2-dd364663e9b6
+		summarizeBy: none
+		sourceColumn: codigo_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 31f56ead-df27-4de0-ba31-732428482056
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto
+		dataType: string
+		lineageTag: fa794609-a4bd-4c79-9d18-97c9e3ef3f02
+		summarizeBy: none
+		sourceColumn: producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: f75fc4c3-d19f-48a4-b61c-59234e15d566
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategoria
+		dataType: string
+		lineageTag: 0cd4e0c0-e646-4a1c-a996-3ac8439c50c4
+		summarizeBy: none
+		sourceColumn: subcategoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad_negocio
+		dataType: string
+		lineageTag: 5637ec83-33a2-4029-b8dc-ecf9845d6d3a
+		summarizeBy: none
+		sourceColumn: unidad_negocio
+
+		annotation SummarizationSetBy = Automatic
+
+	column marca
+		dataType: string
+		lineageTag: ed353085-a183-4271-8f0a-c84b0c12018a
+		summarizeBy: none
+		sourceColumn: marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column segmento_marca
+		dataType: string
+		lineageTag: c0813d08-ae4b-4402-95ff-f8e8c6fb588e
+		summarizeBy: none
+		sourceColumn: segmento_marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column proveedor
+		dataType: string
+		lineageTag: a6dc400f-b4e5-4055-877e-ea3483ffeee2
+		summarizeBy: none
+		sourceColumn: proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column pais_proveedor
+		dataType: string
+		lineageTag: 1589e519-b1b6-4378-a710-6bea7eaba1ba
+		summarizeBy: none
+		sourceColumn: pais_proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_cliente
+		dataType: int64
+		lineageTag: 1dbb4a54-f1e9-42ba-8dca-bbe38def8ee6
+		summarizeBy: sum
+		sourceColumn: id_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_cliente
+		dataType: string
+		lineageTag: dee3b3b8-b7f0-4e3a-9d2b-8e401e857d5c
+		summarizeBy: none
+		sourceColumn: codigo_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column segmento_cliente
+		dataType: string
+		lineageTag: 8707393a-54e4-489f-98b8-07642f8821c3
+		summarizeBy: none
+		sourceColumn: segmento_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column pais_cliente
+		dataType: string
+		lineageTag: 81da9cfe-bcd5-42ff-be3b-94e59d48b5d2
+		summarizeBy: none
+		sourceColumn: pais_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_cliente
+		dataType: string
+		lineageTag: 57cb41c6-c79b-4793-80fc-37a2da73ec12
+		summarizeBy: none
+		sourceColumn: region_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad_cliente
+		dataType: string
+		lineageTag: 4b20deca-5d80-4407-9502-ce61e8059c94
+		summarizeBy: none
+		sourceColumn: ciudad_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal_adquisicion
+		dataType: string
+		lineageTag: 40f45804-fdf1-4b71-b550-262c53e40079
+		summarizeBy: none
+		sourceColumn: canal_adquisicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column nivel_fidelidad
+		dataType: string
+		lineageTag: 71711eef-4900-4ef6-ae8e-0ee7d4ee6ed5
+		summarizeBy: none
+		sourceColumn: nivel_fidelidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_canal
+		dataType: int64
+		lineageTag: dd2714ef-c102-4a79-a4e6-91f368be58ad
+		summarizeBy: sum
+		sourceColumn: id_canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal
+		dataType: string
+		lineageTag: 487e1b45-61d6-41fb-9b17-722b342519e1
+		summarizeBy: none
+		sourceColumn: canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_canal
+		dataType: string
+		lineageTag: 3b7301f3-2ae7-4042-b38f-89a974639f31
+		summarizeBy: none
+		sourceColumn: tipo_canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column comision_pct_defecto
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 44f3e58f-01e7-4c1c-bcc0-bb46e13b1b15
+		summarizeBy: sum
+		sourceColumn: comision_pct_defecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_fulfillment
+		dataType: string
+		lineageTag: defea373-c349-451b-b385-d344b7badb90
+		summarizeBy: none
+		sourceColumn: tipo_fulfillment
+
+		annotation SummarizationSetBy = Automatic
+
+	column ambito_pais
+		dataType: string
+		lineageTag: b4f844ae-95a1-41f7-aa4b-c721bc28c99e
+		summarizeBy: none
+		sourceColumn: ambito_pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_promocion
+		dataType: int64
+		lineageTag: 1c8e0e39-51a6-48bc-aa5c-86777c056d46
+		summarizeBy: sum
+		sourceColumn: id_promocion
+
+		annotation SummarizationSetBy = Automatic
+
+	column promocion
+		dataType: string
+		lineageTag: b41ff481-b470-4510-a8ac-a38e0d44fdda
+		summarizeBy: none
+		sourceColumn: promocion
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_promocion
+		dataType: string
+		lineageTag: 3da9f7d1-c769-436a-95ac-f7851ea4b18e
+		summarizeBy: none
+		sourceColumn: tipo_promocion
+
+		annotation SummarizationSetBy = Automatic
+
+	column descuento_pct_promocion
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 9b8ebfbe-088a-4e7c-8ab2-c01c2e9f8d5c
+		summarizeBy: sum
+		sourceColumn: descuento_pct_promocion
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_metodo_pago
+		dataType: int64
+		lineageTag: 626fe081-1a55-4285-a832-49fb161f56b9
+		summarizeBy: sum
+		sourceColumn: id_metodo_pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column metodo_pago
+		dataType: string
+		lineageTag: 444cd4c2-2851-44be-b4c4-b46653dd36dc
+		summarizeBy: none
+		sourceColumn: metodo_pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column fee_pago_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 1cfa1d65-fbb3-4596-a5dc-9a6b3c85bdb8
+		summarizeBy: sum
+		sourceColumn: fee_pago_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column fee_pago_fijo
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 95cc536a-1362-4b70-aa4a-bdcb307fc49f
+		summarizeBy: sum
+		sourceColumn: fee_pago_fijo
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_envio
+		dataType: int64
+		lineageTag: f2f3b348-cb4c-4434-8f76-d27a407cd9f5
+		summarizeBy: sum
+		sourceColumn: id_envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_envio
+		dataType: string
+		lineageTag: c3b85f6b-cf6b-469c-928f-3d916ab23cd4
+		summarizeBy: none
+		sourceColumn: tipo_envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column transportista
+		dataType: string
+		lineageTag: 15c98483-c634-4d7c-94ba-5c205a5cd5cf
+		summarizeBy: none
+		sourceColumn: transportista
+
+		annotation SummarizationSetBy = Automatic
+
+	column zona_envio
+		dataType: string
+		lineageTag: 6463e3fc-7158-4162-ada5-032709c3bcc1
+		summarizeBy: none
+		sourceColumn: zona_envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column coste_envio_estimado
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 47bb469d-e8af-4666-b573-dd11096858b9
+		summarizeBy: sum
+		sourceColumn: coste_envio_estimado
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidades_vendidas
+		dataType: int64
+		lineageTag: 1c9edd5e-1e31-453d-8171-bca107f795e1
+		summarizeBy: sum
+		sourceColumn: unidades_vendidas
+
+		annotation SummarizationSetBy = Automatic
+
+	column precio_unitario_bruto
+		dataType: double
+		formatString: #,0.00
+		lineageTag: eab7ed0f-de68-4f44-b657-cab67dc5c260
+		summarizeBy: sum
+		sourceColumn: precio_unitario_bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_descuento
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b6d3908e-cdba-4530-a12c-d885a716cc65
+		summarizeBy: sum
+		sourceColumn: importe_descuento
+
+		annotation SummarizationSetBy = Automatic
+
+	column ventas_netas
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 132304f3-2a10-477b-b797-184997596b24
+		summarizeBy: sum
+		sourceColumn: ventas_netas
+
+		annotation SummarizationSetBy = Automatic
+
+	column coste_producto
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 031f5c19-73da-415e-b3ca-6a77f2278816
+		summarizeBy: sum
+		sourceColumn: coste_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column comision
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 77d29775-c968-47e9-a054-5bb925c18003
+		summarizeBy: sum
+		sourceColumn: comision
+
+		annotation SummarizationSetBy = Automatic
+
+	column coste_pago
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 5e2e9b02-f53a-4ad1-a248-385a417be14d
+		summarizeBy: sum
+		sourceColumn: coste_pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column coste_envio_asignado
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d0aab584-97ca-4c09-b36f-62f8ccf04f9e
+		summarizeBy: sum
+		sourceColumn: coste_envio_asignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column costes_totales
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 19c81ef7-7fb5-4098-afa9-1d0390bd4f73
+		summarizeBy: sum
+		sourceColumn: costes_totales
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 77fc2bd4-0a6a-4f13-a825-bbda221f50f9
+		summarizeBy: sum
+		sourceColumn: margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column margen_pct
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 864f7890-db16-4c0d-879e-0196a0dde2e1
+		summarizeBy: sum
+		sourceColumn: margen_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_margen
+		dataType: string
+		formatString: #,0.00
+		lineageTag: 1516af23-26ec-4976-86d4-3a94e53b8ce8
+		summarizeBy: none
+		sourceColumn: estado_margen
+
+		annotation SummarizationSetBy = Automatic
+
+	column importe_bruto
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8529ffc1-eb78-4ffc-b6de-aaca4adb752e
+		summarizeBy: sum
+		sourceColumn: importe_bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column descuento_pct_real
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 2e815439-1505-4e8e-9821-bdf535c48332
+		summarizeBy: sum
+		sourceColumn: descuento_pct_real
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_margen_negativo
+		dataType: int64
+		lineageTag: 62680442-8c48-4670-8e53-0df7f7275eef
+		summarizeBy: sum
+		sourceColumn: flag_margen_negativo
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_margen_bajo
+		dataType: int64
+		lineageTag: 40e6d6af-1e15-4300-af2d-6e2ab6db4cdb
+		summarizeBy: sum
+		sourceColumn: flag_margen_bajo
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_descuento_superior_bruto
+		dataType: int64
+		lineageTag: fd7b9e9b-0872-4a4a-b33b-70da5c69dae0
+		summarizeBy: sum
+		sourceColumn: flag_descuento_superior_bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_registro_valido
+		dataType: int64
+		lineageTag: 82d97b73-5639-45eb-b1a4-558ed6ff4960
+		summarizeBy: sum
+		sourceColumn: flag_registro_valido
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ventas_powerbi_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="ventas_powerbi"]}[Data]
+				in
+				    Datos
+

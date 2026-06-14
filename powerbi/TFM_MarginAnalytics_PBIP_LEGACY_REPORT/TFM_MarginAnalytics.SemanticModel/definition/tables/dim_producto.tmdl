@@ -1,0 +1,86 @@
+table dim_producto
+	lineageTag: d80b1108-8a58-43d9-aa65-e453eb531627
+
+	column product_id
+		dataType: int64
+		lineageTag: eda060e5-d186-4520-b114-24b9a6d95a1e
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_code
+		dataType: string
+		lineageTag: 6e072d63-dcb1-43e7-a362-d5c19aad6a51
+		summarizeBy: none
+		sourceColumn: product_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: b255e18f-aa24-400c-94f9-34dce27d4e42
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: edee6be3-e901-4bf7-a8e9-54a9324af2fc
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: 90aa85ff-46cb-4d8d-b6b3-4ae3d894535d
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_name
+		dataType: string
+		lineageTag: e3f32268-a1a3-4ba6-8876-557f62f38a0f
+		summarizeBy: none
+		sourceColumn: brand_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_name
+		dataType: string
+		lineageTag: f3eb61cb-7b17-47e9-a196-656a0459356d
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_cost
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 191ab64b-ae3a-4a80-ae49-247b1789384f
+		summarizeBy: none
+		sourceColumn: standard_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_price
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 616b4475-53bc-4171-912b-d0756b999c6a
+		summarizeBy: none
+		sourceColumn: standard_price
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_producto_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="dim_producto_powerbi"]}[Data]
+				in
+				    Datos
+

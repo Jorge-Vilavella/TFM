@@ -1,0 +1,32 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim_fecha","dim_canal","dim_categoria","dim_producto","calidad_datos","margen_canal","predicciones_ventas","rentabilidad_producto","resumen_ejecutivo","resumen_mensual","riesgo_stock","ventas_powerbi","Medidas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table calidad_datos
+ref table margen_canal
+ref table predicciones_ventas
+ref table rentabilidad_producto
+ref table resumen_ejecutivo
+ref table resumen_mensual
+ref table riesgo_stock
+ref table ventas_powerbi
+ref table Medidas
+ref table dim_fecha
+ref table dim_canal
+ref table dim_categoria
+ref table dim_producto
+ref table DateTableTemplate_fac7840f-fd7d-462c-97af-67e2142b1ad4
+ref table LocalDateTable_2d1ae952-88e1-40ce-b76a-2fcc80f419da
+ref table LocalDateTable_c5b46e1a-df39-4f73-83a4-bfed683d2ae3
+

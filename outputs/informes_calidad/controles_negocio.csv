@@ -1,0 +1,8 @@
+control,resultado
+ventas_netas_negativas,0
+costes_totales_negativos,0
+unidades_no_positivas,0
+margen_pct_menor_que_menos_100,11
+descuento_negativo,0
+descuento_superior_a_bruto,0
+lineas_margen_negativo,5808

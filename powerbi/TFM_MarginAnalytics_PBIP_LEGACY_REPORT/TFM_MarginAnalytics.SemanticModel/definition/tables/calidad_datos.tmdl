@@ -1,0 +1,22 @@
+table calidad_datos
+	lineageTag: c39cc4ff-1405-46c7-8118-1c897ec5f2ac
+
+	column control
+		dataType: string
+		lineageTag: e8daba41-8041-4aa1-a2e8-65ec5d1cc2f1
+		sourceColumn: control
+
+	column resultado
+		dataType: int64
+		lineageTag: 11505cf1-3a28-483a-8e0a-f5094e60b214
+		sourceColumn: resultado
+
+	partition calidad_datos_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="calidad_datos"]}[Data]
+				in
+				    Datos
+

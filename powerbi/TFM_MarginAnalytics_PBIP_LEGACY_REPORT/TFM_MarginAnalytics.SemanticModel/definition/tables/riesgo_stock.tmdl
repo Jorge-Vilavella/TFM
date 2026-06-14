@@ -1,0 +1,179 @@
+table riesgo_stock
+	lineageTag: 9f6013be-79a9-435b-af9d-ab084d0cbbe6
+
+	column fecha_stock
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 27a7d20c-d9d7-4a48-b7d6-5bf01bf09b42
+		summarizeBy: none
+		sourceColumn: fecha_stock
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_producto
+		dataType: int64
+		lineageTag: 4e57d12a-d7e7-4cef-8d3e-fddecc818039
+		summarizeBy: sum
+		sourceColumn: id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_producto
+		dataType: string
+		lineageTag: 5eda153c-334f-41d6-bad5-ab673793d7f0
+		summarizeBy: none
+		sourceColumn: codigo_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 432bdff6-3119-451f-8575-bdf3438fc4ed
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column producto
+		dataType: string
+		lineageTag: 892c98a9-4346-4429-99f0-70e1ee516da7
+		summarizeBy: none
+		sourceColumn: producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: fbcab3d7-1e71-4cac-bf65-55ddaa698ef1
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column marca
+		dataType: string
+		lineageTag: 7646189d-ccac-49f1-8c40-c095aa79eb01
+		summarizeBy: none
+		sourceColumn: marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_almacen
+		dataType: int64
+		lineageTag: 35ba9331-8d2b-41e3-a605-9828dbc8592e
+		summarizeBy: sum
+		sourceColumn: id_almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column almacen
+		dataType: string
+		lineageTag: 083df9f2-8f98-4474-98cc-e06b8f50cdfa
+		summarizeBy: none
+		sourceColumn: almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_almacen
+		dataType: string
+		lineageTag: ef834687-45de-40ba-8d26-eb5a19ef1698
+		summarizeBy: none
+		sourceColumn: region_almacen
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_disponible
+		dataType: int64
+		lineageTag: 59afe792-8c10-46ee-9036-fb6e076b6441
+		summarizeBy: sum
+		sourceColumn: stock_disponible
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_reservado
+		dataType: int64
+		lineageTag: 85816db2-1890-46c9-935f-a1ab6fada4b2
+		summarizeBy: sum
+		sourceColumn: stock_reservado
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidades_entrantes
+		dataType: int64
+		lineageTag: 2ce5b2c9-6170-4b42-9724-c4e0ea7d6542
+		summarizeBy: sum
+		sourceColumn: unidades_entrantes
+
+		annotation SummarizationSetBy = Automatic
+
+	column punto_reposicion
+		dataType: int64
+		lineageTag: 7fdc9a4a-6b78-4950-a10e-3d81205e1fcc
+		summarizeBy: sum
+		sourceColumn: punto_reposicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_riesgo_stock
+		dataType: boolean
+		lineageTag: 6000ff70-94ba-4888-bf1a-d64e6d11fd93
+		summarizeBy: none
+		sourceColumn: flag_riesgo_stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidades_dia_ultimos_30
+		dataType: double
+		lineageTag: 903a93ea-f68b-4b82-b525-9786ac2546e0
+		summarizeBy: sum
+		sourceColumn: unidades_dia_ultimos_30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dias_cobertura_stock
+		dataType: double
+		lineageTag: 398c2bf1-3789-4732-ac5a-9693d97c736e
+		summarizeBy: sum
+		sourceColumn: dias_cobertura_stock
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nivel_riesgo_stock
+		dataType: string
+		lineageTag: ff5293d2-1607-4d69-b9bf-2f421236e794
+		summarizeBy: none
+		sourceColumn: nivel_riesgo_stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_riesgo_alto
+		dataType: int64
+		lineageTag: fdaf11c0-6c41-40cb-93e6-68c2c42c2334
+		summarizeBy: sum
+		sourceColumn: flag_riesgo_alto
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_cobertura_stock
+		dataType: string
+		lineageTag: bf8f089f-23d9-445f-ae1b-538cc68dc097
+		summarizeBy: none
+		sourceColumn: estado_cobertura_stock
+
+		annotation SummarizationSetBy = Automatic
+
+	partition riesgo_stock_Partition = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database(".\SQL_ESTUDIO", "TFM_MarginAnalytics"),
+				    Datos = Origen{[Schema="gold",Item="riesgo_stock"]}[Data]
+				in
+				    Datos
+
